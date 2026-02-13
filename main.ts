@@ -1,23 +1,22 @@
 import * as readline from 'readline';
 
 // 1. Creational
-import { runFactoryMethodDemo } from './creational/FactoryMethod';
-import { runAbstractFactoryDemo } from './creational/AbstractFactory';
-import { runBuilderDemo } from './creational/Builder';
-import { runPrototypeDemo } from './creational/Prototype';
+import { runFactoryDemo } from './src/creational/MonsterFactory'; // Sesuaikan nama file dan path
+import { runAbstractDemo } from './src/creational/AbstractFactoryLoot';
+import { runBuilderDemo } from './src/creational/BuilderDungeon';
+import { runPrototypeDemo } from './src/creational/PrototypeMinion';
 
 // 2. Structural
-import { runDecoratorDemo } from './structural/Decorator';
-import { runCompositeDemo } from './structural/Composite';
-import { runFlyweightDemo } from './structural/Flyweight';
-import { runAdapterDemo } from './structural/Adapter';
+import { runDecoratorDemo } from './src/structural/DecoratorWeapon';
+import { runCompositeDemo } from './src/structural/CompositeInventory';
+import { runFlyweightDemo } from './src/structural/FlyweightMap';
+import { runAdapterDemo } from './src/structural/AdapterInput';
 
 // 3. Behavioral
-import { runStateDemo } from './behavioral/State';
-import { runStrategyDemo } from './behavioral/Strategy';
-import { runObserverDemo } from './behavioral/Observer';
-import { runCommandDemo } from './behavioral/CommandBattle';
-
+import { runStateDemo } from './src/behavioral/StateCharacter';
+import { runStrategyDemo } from './src/behavioral/StrategyEnemyAI';
+import { runObserverDemo } from './src/behavioral/ObserverGameEvents';
+import { runCommandDemo } from './src/behavioral/CommandBattle';
 
 // --- KONFIGURASI READLINE ---
 const rl = readline.createInterface({

@@ -7,13 +7,16 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "baseUrl": ".",
-    "paths": {
-      "behavioral/*": ["./behavioral/*"]
-    },
+
     "target": "esNext",
     "module": "es2020",
     "types": ["node"],
+    "moduleResolution": "node", // Ubah ke node atau nodenext
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"] // Tambahkan alias agar TS mencari di dalam folder src
+    },
+    "noUnusedLocals": false,
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
