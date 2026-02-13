@@ -39,23 +39,23 @@ Kami menerapkan arsitektur modular yang memisahkan logika berdasarkan domain fit
 
 ### Creational Patterns 
 | Pattern | Implementasi di Game | 
-| :--- | :--- | :--- |
+| :--- | :--- | 
 | **Factory Method** | *Monster Spawning* berdasarkan lokasi (Gua/Kuburan). |
 | **Abstract Factory** | *Loot System* yang menghasilkan set senjata/armor sesuai tema (Hutan/Laut). | 
 | **Builder** | Konstruksi Level Dungeon yang kompleks (Terrain, Room, Light, Trap). | 
 | **Prototype** | Cloning monster "Minion" (Slime/Ghost) untuk efisiensi memori. | 
 
 ### Structural Patterns 
-| Pattern | Implementasi di Game | File Utama |
-| :--- | :--- | :--- |
+| Pattern | Implementasi di Game | 
+| :--- | :--- | 
 | **Adapter** | Menghubungkan driver input eksternal (Keyboard/Gamepad) ke Engine. | 
 | **Composite** | Sistem Inventory hierarkis (Tas di dalam Tas). | 
 | **Decorator** | Menambahkan efek elemen (Api/Es) pada senjata secara dinamis. | 
 | **Flyweight** | Optimasi rendering ribuan *Tile* peta untuk hemat RAM. | 
 
 ### Behavioral Patterns 
-| Pattern | Implementasi di Game | File Utama |
-| :--- | :--- | :--- |
+| Pattern | Implementasi di Game | 
+| :--- | :--- | 
 | **State** | Mengatur kondisi Hero (Normal, Stunned, Dead). | 
 | **Strategy** | AI Musuh yang dinamis (Aggressive, Defensive, Passive). | 
 | **Observer** | Notifikasi *real-time* ke UI, Audio, dan Achievement saat HP berubah. | 
