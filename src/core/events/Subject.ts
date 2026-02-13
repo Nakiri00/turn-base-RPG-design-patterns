@@ -21,7 +21,6 @@ export class Subject implements ISubject {
     }
 
     public notify(): void {
-        // Mengirim 'this' (objek Subject itu sendiri) ke observer
         for (const observer of this.observers) {
             observer.update(this);
         }

@@ -8,7 +8,6 @@ export class Slime implements IMinion {
     }
 
     public clone(): IMinion {
-        // Shallow copy cukup untuk properti sederhana
         return new Slime(this.color, this.hp);
     }
 

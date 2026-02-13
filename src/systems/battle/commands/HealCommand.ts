@@ -13,7 +13,6 @@ export class HealCommand implements ICommand {
 
     public undo(): void {
         console.log(`[UNDO] Membatalkan healing ${this.unit.name}...`);
-        // Kebalikan dari Heal adalah Damage (Take Damage)
         this.unit.takeDamage(this.amount);
     }
 }

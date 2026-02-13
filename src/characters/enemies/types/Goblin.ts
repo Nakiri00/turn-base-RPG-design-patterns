@@ -5,7 +5,6 @@ export class Goblin extends Enemy {
         super("Goblin Scout", 30, 5);
     }
     
-    // Override attack jika ingin spesifik
     public attack(): void {
         console.log(`${this.name} menusuk licik dengan belati! (Damage: ${this.damage})`);
     }

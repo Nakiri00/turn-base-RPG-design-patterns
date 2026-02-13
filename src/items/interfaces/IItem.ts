@@ -1,5 +1,5 @@
 export interface IItem {
     getName(): string;
-    getWeight(): number; // Satuan Kg
-    display(indent: string): void; // Untuk visualisasi struktur
+    getWeight(): number; 
+    display(indent: string): void; 
 }

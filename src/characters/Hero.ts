@@ -8,33 +8,26 @@ export class Hero extends Subject {
     public maxHp: number;
 
     constructor(public name: string, hp: number) {
-        super(); // Init Subject
+        super(); 
         this.name = name;
         this.hp = hp;
         this.maxHp = hp;
-        this.state = new NormalState(); // Default State
+        this.state = new NormalState(); 
     }
 
     public setState(newState: IHeroState): void {
         this.state = newState;
         console.log(`[STATUS CHANGE] ${this.name} sekarang: ${newState.constructor.name}`);
-        this.notify(); // Beritahu UI kalau status berubah
+        this.notify(); 
     }
-
-    // --- Action Methods ---
     
     public attack(): void {
         this.state.attack(this);
     }
 
     public takeDamage(amount: number): void {
-        // Delegasi logic damage ke State (apakah normal/stunned/dead?)
         this.state.takeDamage(this, amount);
-        
-        // Logic clamping HP
         if (this.hp < 0) this.hp = 0;
-        
-        // Beritahu Observer (UI/Audio)
         this.notify(); 
     }
 

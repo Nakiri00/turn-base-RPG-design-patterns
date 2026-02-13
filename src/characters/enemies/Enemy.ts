@@ -1,5 +1,4 @@
 import type { IEnemyStrategy } from "./interfaces/IEnemyStrategy";
-// Default strategy, misal Passive
 import { PassiveStrategy } from "./strategies/PassiveStrategy"; 
 
 export abstract class Enemy {
@@ -18,7 +17,6 @@ export abstract class Enemy {
         this.strategy.execute(this);
     }
 
-    // Method ini akan dipanggil oleh Strategy atau sistem battle
     public attack(): void {
         console.log(`${this.name} menyerang dengan damage ${this.damage}!`);
     }

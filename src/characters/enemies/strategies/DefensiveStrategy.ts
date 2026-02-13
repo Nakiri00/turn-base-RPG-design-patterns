@@ -4,6 +4,6 @@ import { Enemy } from "../Enemy";
 export class DefensiveStrategy implements IEnemyStrategy {
     public execute(enemy: Enemy): void {
         console.log(`${enemy.name} (Defensive): Waduh, bahaya! Mundur dulu!`);
-        enemy.attack(); // Memanggil method attack milik musuh
+        enemy.attack(); 
     }
 }
