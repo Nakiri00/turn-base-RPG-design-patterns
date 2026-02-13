@@ -4,6 +4,6 @@ import { Enemy } from "../Enemy";
 export class PassiveStrategy implements IEnemyStrategy {
     public execute(enemy: Enemy): void {
         console.log(`${enemy.name} (Passive): Hmm... sepi ya hari ini!`);
-        enemy.attack(); 
+        console.log("-> Berjalan santai sambil siul-siul...");
     }
 }

@@ -7,45 +7,67 @@ import { SeaFactory } from "../items/loot/factories/SeaFactory";
 import { DungeonBuilder } from "../world/generation/builders/DungeonBuilder";
 import { DungeonDirector } from "../world/generation/DungeonDirector";
 
-// 1. FACTORY METHOD
 export function runFactoryDemo() {
     console.log("=== FACTORY METHOD: SPAWNING MONSTERS ===");
+    console.log("Level 1: Masuk Gua");
     const cave = new CaveFactory();
-    const grave = new GraveyardFactory();
-
     cave.spawnMonster(); 
+
+    console.log("\nLevel 2: Masuk Kuburan");
+    const grave = new GraveyardFactory();
     grave.spawnMonster(); 
 }
 
-// 2. ABSTRACT FACTORY
 export function runAbstractDemo() {
     console.log("\n=== ABSTRACT FACTORY: LOOT SYSTEM ===");
-    const forestLoot = new ForestFactory();
     
+    console.log("Scenario: Loot dari Hutan Elf");
+    const forestLoot = new ForestFactory();
     const bow = forestLoot.createWeapon();
-    const armor = forestLoot.createArmor();
-
-    console.log(`Dapat Loot: ${bow.getDescription()} & ${armor.getDescription()}`);
+    const tunic = forestLoot.createArmor();
+    console.log(`Dapat: ${bow.getDescription()} & ${tunic.getDescription()}`);
     bow.attack();
+
+    console.log("\nScenario: Loot dari Istana Laut");
+    const seaLoot = new SeaFactory();
+    const trident = seaLoot.createWeapon();
+    const mail = seaLoot.createArmor();
+    console.log(`Dapat: ${trident.getDescription()} & ${mail.getDescription()}`);
+    trident.attack();
 }
 
-// 3. BUILDER
 export function runBuilderDemo() {
     console.log("\n=== BUILDER: DUNGEON GENERATION ===");
     const builder = new DungeonBuilder();
     const director = new DungeonDirector();
 
+    console.log("--- CARA 1: Pake Director (Resep Baku) ---");
     director.constructBossLevel(builder);
-    const level = builder.build();
-    level.showSpecs();
+    const bossLevel = builder.build();
+    bossLevel.showSpecs();
+
+    console.log("\n--- CARA 2: Custom Manual ---");
+    const secretLevel = builder.reset()
+        .setName("Secret Cow Level")
+        .setTerrain("Pasture")
+        .addRoom("Barn")
+        .addMonster("Cow King")
+        .build();
+    secretLevel.showSpecs();
 }
 
-// 4. PROTOTYPE
 export function runPrototypeDemo() {
     console.log("\n=== PROTOTYPE: MINION CLONING ===");
+    console.log("PHASE 1: Inisialisasi Master (Berat)");
     const masterSlime = new Slime("Green", 50);
     
-    const clone1 = masterSlime.clone();
-    clone1.setId("Clone-1");
-    clone1.showDetails();
+    console.log("\nPHASE 2: Cloning Massal (Cepat)");
+    const army = [];
+    for(let i=1; i<=3; i++) {
+        const clone = masterSlime.clone();
+        clone.setId(`Clone-${i}`);
+        army.push(clone);
+    }
+    
+    army.forEach(m => m.showDetails());
 }
