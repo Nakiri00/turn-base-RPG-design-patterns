@@ -27,7 +27,7 @@ Proyek ini disusun untuk memenuhi **Tugas Besar Mata Kuliah Clean Code dan Desig
 
 Sistem ini mensimulasikan:
 * **Eksplorasi Dungeon** yang dibuat secara prosedural.
-* **Manajemen Inventory** yang kompleks.
+* **Manajemen Inventory**.
 * **Sistem Pertarungan** dengan AI musuh yang dinamis.
 * **Kustomisasi Senjata** dengan sistem *enchantment*.
 
