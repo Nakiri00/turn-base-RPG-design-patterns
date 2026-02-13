@@ -1,30 +1,14 @@
 import * as readline from 'readline';
 
-// 1. Creational
-import { runFactoryDemo } from './src/creational/MonsterFactory'; // Sesuaikan nama file dan path
-import { runAbstractDemo } from './src/creational/AbstractFactoryLoot';
-import { runBuilderDemo } from './src/creational/BuilderDungeon';
-import { runPrototypeDemo } from './src/creational/PrototypeMinion';
+import { runFactoryDemo, runAbstractDemo, runBuilderDemo, runPrototypeDemo } from "./src/demos/Creational";
+import { runDecoratorDemo, runCompositeDemo, runFlyweightDemo, runAdapterDemo } from "./src/demos/Structural";
+import { runStateDemo, runStrategyDemo, runObserverDemo, runCommandDemo } from "./src/demos/Behavioral";
 
-// 2. Structural
-import { runDecoratorDemo } from './src/structural/DecoratorWeapon';
-import { runCompositeDemo } from './src/structural/CompositeInventory';
-import { runFlyweightDemo } from './src/structural/FlyweightMap';
-import { runAdapterDemo } from './src/structural/AdapterInput';
-
-// 3. Behavioral
-import { runStateDemo } from './src/behavioral/StateCharacter';
-import { runStrategyDemo } from './src/behavioral/StrategyEnemyAI';
-import { runObserverDemo } from './src/behavioral/ObserverGameEvents';
-import { runCommandDemo } from './src/behavioral/CommandBattle';
-
-// --- KONFIGURASI READLINE ---
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-// --- FUNGSI UTILITAS (WARNA & CLEAR SCREEN) ---
 const color = {
     reset: "\x1b[0m",
     bright: "\x1b[1m",
@@ -36,23 +20,15 @@ const color = {
 
 function clearScreen() {
     console.clear();
+    process.stdout.write('\x1B[2J\x1B[0f\x1B[3J');
 }
-
 function printHeader() {
-    console.log(color.cyan + `
-    ███████╗████████╗███████╗██████╗ ███╗   ██╗ █████╗ ██╗     
-    ██╔════╝╚══██╔══╝██╔════╝██╔══██╗████╗  ██║██╔══██╗██║     
-    █████╗     ██║   █████╗  ██████╔╝██╔██╗ ██║███████║██║     
-    ██╔══╝     ██║   ██╔══╝  ██╔══██╗██║╚██╗██║██╔══██║██║     
-    ███████╗   ██║   ███████╗██║  ██║██║ ╚████║██║  ██║███████╗
-    ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝
-    ` + color.reset);
-    console.log(color.bright + "    ETERNAL DUNGEON: DESIGN PATTERNS SHOWCASE" + color.reset);
+    console.log(color.bright + "ETERNAL DUNGEON: DESIGN PATTERNS SHOWCASE" + color.reset);
 }
 
 // --- MENU UTAMA ---
 function showMenu() {
-    console.log(color.yellow + "=== PILIH DEMO DESIGN PATTERN ===" + color.reset);
+    console.log(color.yellow + "PILIH DEMO DESIGN PATTERN" + color.reset);
     
     console.log(color.bright + "\n[ CREATIONAL ]" + color.reset);
     console.log("1. Factory Method    (Monster Spawning)");
@@ -79,75 +55,36 @@ function showMenu() {
     });
 }
 
-// --- LOGIKA HANDLING INPUT ---
 function handleInput(choice: string) {
-    console.log("\n"); // Spasi biar rapi
-
+    console.log("\n"); 
     switch (choice) {
         // --- CREATIONAL ---
-        case '1':
-            runFactoryDemo(); 
-            console.log("Running Factory Demo... (Uncomment import to see real output)");
-            break;
-        case '2':
-            runAbstractDemo();
-            console.log("Running Abstract Factory Demo...");
-            break;
-        case '3':
-            runBuilderDemo();
-            console.log("Running Builder Demo...");
-            break;
-        case '4':
-            runPrototypeDemo();
-            console.log("Running Prototype Demo...");
-            break;
+        case '1': runFactoryDemo(); break;
+        case '2': runAbstractDemo(); break;
+        case '3': runBuilderDemo(); break;
+        case '4': runPrototypeDemo(); break;
 
         // --- STRUCTURAL ---
-        case '5':
-            runDecoratorDemo();
-            console.log("Running Decorator Demo...");
-            break;
-        case '6':
-            runCompositeDemo();
-            console.log("Running Composite Demo...");
-            break;
-        case '7':
-            runFlyweightDemo();
-            console.log("Running Flyweight Demo...");
-            break;
-        case '8':
-            runAdapterDemo();
-            console.log("Running Adapter Demo...");
-            break;
+        case '5': runDecoratorDemo(); break;
+        case '6': runCompositeDemo(); break;
+        case '7': runFlyweightDemo(); break;
+        case '8': runAdapterDemo(); break;
 
         // --- BEHAVIORAL ---
-        case '9':
-            runStateDemo();
-            console.log("Running State Demo...");
-            break;
-        case '10':
-            runStrategyDemo();
-            console.log("Running Strategy Demo...");
-            break;
-        case '11':
-            runObserverDemo();
-            console.log("Running Observer Demo...");
-            break;
-        case '12':
-            runCommandDemo();
-            console.log("Running Command Demo...");
-            break;
+        case '9': runStateDemo(); break;
+        case '10': runStrategyDemo(); break;
+        case '11': runObserverDemo(); break;
+        case '12': runCommandDemo(); break;
 
         case '0':
             console.log(color.green + "Terima kasih telah mencoba demo kami! Sampai jumpa." + color.reset);
             rl.close();
-            return; // Stop program
+            return; 
 
         default:
             console.log(color.red + "Pilihan tidak valid! Silakan pilih nomor 0-12." + color.reset);
     }
 
-    // Kembali ke menu setelah user menekan Enter
     rl.question("\nTekan [ENTER] untuk kembali ke menu utama...", () => {
         clearScreen();
         printHeader();
@@ -155,7 +92,6 @@ function handleInput(choice: string) {
     });
 }
 
-// --- JALANKAN PROGRAM ---
 clearScreen();
 printHeader();
 showMenu();
