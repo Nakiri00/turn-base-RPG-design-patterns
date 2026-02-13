@@ -5,7 +5,6 @@ import { DefensiveStrategy } from "../characters/enemies/strategies/DefensiveStr
 import { HealthBarUI } from "../systems/observers/HealthBarUI";
 import { AchievementSystem } from "../systems/observers/Achievement";
 import { AudioSystem } from "../systems/observers/AudioSystem";
-
 import { GameUnit } from "../systems/battle/GameUnit";
 import { MoveCommand } from "../systems/battle/commands/MoveCommand";
 import { HealCommand } from "../systems/battle/commands/HealCommand";
@@ -13,7 +12,7 @@ import { CommandHistory } from "../systems/battle/CommandHistory";
 
 export function runStateDemo() {
     console.log("=== STATE: HERO CONDITION ===");
-    const hero = new Hero("Arthur", 100);
+    const hero = new Hero("Mep", 100);
     
     console.log("--- ROUND 1: NORMAL ---");
     hero.attack();
@@ -50,7 +49,7 @@ export function runStrategyDemo() {
 
 export function runObserverDemo() {
     console.log("\n=== OBSERVER: EVENT SYSTEM ===");
-    const hero = new Hero("Alucard", 100);
+    const hero = new Hero("Mep", 100);
     const ui = new HealthBarUI();
     const achievement = new AchievementSystem();
     const audio = new AudioSystem();

@@ -1,4 +1,3 @@
-// Import factory yang sudah kita refactor
 import { CaveFactory } from "../characters/enemies/spawner/CaveFactory";
 import { GraveyardFactory } from "../characters/enemies/spawner/GraveyardFactory";
 import { Slime } from "../characters/minions/Slime";
