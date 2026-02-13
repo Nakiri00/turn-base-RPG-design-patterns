@@ -2,13 +2,14 @@ import { Hero } from "../characters/Hero";
 import { Goblin } from "../characters/enemies/types/Goblin";
 import { AggressiveStrategy } from "../characters/enemies/strategies/AggresiveStrategy";
 import { DefensiveStrategy } from "../characters/enemies/strategies/DefensiveStrategy";
-import { GameUnit } from "../systems/battle/GameUnit";
-import { MoveCommand } from "../systems/battle/commands/MoveCommand";
-import { CommandHistory } from "../systems/battle/CommandHistory";
 import { HealthBarUI } from "../systems/observers/HealthBarUI";
 import { AchievementSystem } from "../systems/observers/Achievement";
 import { AudioSystem } from "../systems/observers/AudioSystem";
-import { HealCommand } from "systems/battle/commands/HealCommand";
+
+import { GameUnit } from "../systems/battle/GameUnit";
+import { MoveCommand } from "../systems/battle/commands/MoveCommand";
+import { HealCommand } from "../systems/battle/commands/HealCommand";
+import { CommandHistory } from "../systems/battle/CommandHistory";
 
 export function runStateDemo() {
     console.log("=== STATE: HERO CONDITION ===");
