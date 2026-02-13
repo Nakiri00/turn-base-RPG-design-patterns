@@ -8,20 +8,20 @@
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
 
-    "target": "esNext",
-    "module": "es2020",
+    "target": "es2020",
+    "module": "esnext",
     "types": ["node"],
     "moduleResolution": "node", // Ubah ke node atau nodenext
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["src/*"] // Tambahkan alias agar TS mencari di dalam folder src
+      "*": ["src/*"] 
     },
     "noUnusedLocals": false,
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
     // and npm install -D @types/node
-
     // Other Outputs
     "sourceMap": true,
     "declaration": true,
@@ -47,5 +47,9 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   }
 }

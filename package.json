@@ -4,13 +4,14 @@
   "main": "index.js",
   "types": "module",
   "scripts": {
+    "start": "node --loader ts-node/esm main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "description": "",
+  "type": "module",
   "devDependencies": {
     "@types/node": "^25.2.3",
     "ts-node": "^10.9.2",

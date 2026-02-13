@@ -61,6 +61,9 @@ export function runObserverDemo() {
         public takeDamage(amount: number): void {
             console.log(`${this.name} terkena ${amount} damage!`);
             this.hp -= amount;
+
+            if (this.hp < 0) this.hp = 0;
+            if (this.hp > this.maxHp) this.hp = this.maxHp;
             
             // SETIAP ada perubahan penting, panggil notify()
             this.notify();
@@ -82,10 +85,12 @@ export function runObserverDemo() {
     // OBSERVER 1: UI Health Bar (Visual)
     class HealthBarUI implements IObserver {
         public update(hero: GameHero): void {
-            const percentage = (hero.hp / hero.maxHp) * 100;
-            // Simulasi visual bar
-            const bar = "█".repeat(Math.floor(percentage / 10)) + "░".repeat(10 - Math.floor(percentage / 10));
-            console.log(`[UI DISPLAY] HP Bar: [${bar}] ${percentage.toFixed(0)}%`);
+            const percent = Math.max(0, hero.hp) / hero.maxHp;
+            const totalBars = 10;
+            const filled = Math.max(0, Math.floor(percent * totalBars));
+            const empty = totalBars - filled;
+
+            console.log(`[UI DISPLAY] HP Bar: [${"█".repeat(filled)}${"░".repeat(empty)}] ${Math.round(percent * 100)}%`);
         }
     }
 
@@ -116,7 +121,7 @@ export function runObserverDemo() {
     // 4. CLIENT CODE (Main Game Loop)
     // ==========================================
 
-    const hero = new GameHero("Alucard", 100);
+    const hero = new GameHero("Mep", 100);
 
     // Buat Observer
     const ui = new HealthBarUI();

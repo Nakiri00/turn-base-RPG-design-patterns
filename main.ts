@@ -86,55 +86,55 @@ function handleInput(choice: string) {
     switch (choice) {
         // --- CREATIONAL ---
         case '1':
-            // runFactoryMethodDemo(); 
+            runFactoryDemo(); 
             console.log("Running Factory Demo... (Uncomment import to see real output)");
             break;
         case '2':
-            // runAbstractFactoryDemo();
+            runAbstractDemo();
             console.log("Running Abstract Factory Demo...");
             break;
         case '3':
-            // runBuilderDemo();
+            runBuilderDemo();
             console.log("Running Builder Demo...");
             break;
         case '4':
-            // runPrototypeDemo();
+            runPrototypeDemo();
             console.log("Running Prototype Demo...");
             break;
 
         // --- STRUCTURAL ---
         case '5':
-            // runDecoratorDemo();
+            runDecoratorDemo();
             console.log("Running Decorator Demo...");
             break;
         case '6':
-            // runCompositeDemo();
+            runCompositeDemo();
             console.log("Running Composite Demo...");
             break;
         case '7':
-            // runFlyweightDemo();
+            runFlyweightDemo();
             console.log("Running Flyweight Demo...");
             break;
         case '8':
-            // runAdapterDemo();
+            runAdapterDemo();
             console.log("Running Adapter Demo...");
             break;
 
         // --- BEHAVIORAL ---
         case '9':
-            // runStateDemo();
+            runStateDemo();
             console.log("Running State Demo...");
             break;
         case '10':
-            // runStrategyDemo();
+            runStrategyDemo();
             console.log("Running Strategy Demo...");
             break;
         case '11':
-            // runObserverDemo();
+            runObserverDemo();
             console.log("Running Observer Demo...");
             break;
         case '12':
-            // runCommandDemo();
+            runCommandDemo();
             console.log("Running Command Demo...");
             break;
 
